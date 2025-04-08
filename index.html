@@ -7,13 +7,12 @@
     <style>
     
         body {
-            /* background: #070a18; */
-            background: url("images/bg.png");
-            background-size: cover;
+            background: url("bg_.png"); 
+            /* background-size: cover; */
             background-attachment: fixed;
             /* backdrop-filter: blur(3px); */
             color: white;
-            font-family: 'Segoe UI Light';
+            font-family: 'Segoe UI Light', Helvetica;
         }
 
         h1 {
@@ -56,13 +55,26 @@
             box-shadow: 0px 0px 50px 2px rgba(0,0,0,1);
         }
 
-        .thumbnail h3 {
+        .header {
             background-color: rgba(30, 30, 60, 0.8);
-            padding-left: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
             padding-top: 10px;
             padding-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header *{
             margin: 0px;
-            margin-bottom: 0px;
+            padding: 0px;
+        }
+
+        .header p {
+            background-color: #FFF;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 7px;;
         }
 
         .image-wrapper {
@@ -78,6 +90,14 @@
             display: block;
             padding: 10px;
             border-radius:15px;
+            /* transform: translteY(0) */
+        }
+
+        .thumbnail.expanded {
+            width: 100%;
+            z-index: 3;
+            box-shadow: 0 0 30px 5px rgba(0,0,0,.9);
+            transform: none;
         }
 
         .thumbnail.expanded {
@@ -87,19 +107,38 @@
             transform: none; /* Optional: remove hover scale on expanded */
         }
 
-        .thumbnail.expanded .image-wrapper {
-            height: 0;
-        }
-
         .thumbnail.expanded img {
             transform: translateY(-100%);
         }
 
-        .expanded-content {
+        .expanded {
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.6);
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
+        }
+
+        .cl-image {
+            display: block;
+        }
+
+        .iframe-wrapper {
+            display: none;
+            padding: 20px;
+        }
+
+        .expanded .image-wrapper {
+            height: 0;
+        }
+
+        .expanded .iframe-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .iframe-wrapper-text {
+            width: 100%;
+            padding: 20px;
+            padding-top: 0px;
         }
     </style>
 </head>
@@ -107,58 +146,132 @@
     <h1>Highlighted projects</h1>
     <div class="thumbnails">
         <div class="thumbnails">
-            <div class="thumbnail" data-id="alpha_beta">
-                <h3>Alpha Beta</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>Alpha Beta</h3>
+                    <p>🎮</p>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/scratch/744172779.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/744172779/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="bees">
-                <h3>Bees!</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>Bees!</h3>
+                    <p>🎮</p>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/scratch/866968010.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/866968010/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="11_11">
-                <h3>11 11</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>11 11</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/11.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="ktane">
-                <h3>KTANE helper</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>KTANE helper</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/KTANE.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="tictactoe">
-                <h3>TicTacToe calculator</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>TicTacToe calculator</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/Tic-Tac-Toe.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="CPU">
-                <h3>PC mega proyect</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>PC mega proyect</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/CPU.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="3D_engines">
-                <h3>3D engines</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>3D engines</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/3D_engine.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="physics_engines">
-                <h3>Physics engines</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>Physics engines</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/propulsión.png">
                 </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
+                </div>
             </div>
-            <div class="thumbnail" data-id="ESIS">
-                <h3>ESIS comission</h3>
+            <div class="thumbnail">
+                <div class="header">
+                    <h3>ESIS comission</h3>
+                </div>
                 <div class="image-wrapper">
                     <img src="images/python/ESIS.png">
+                </div>
+                <div class="iframe-wrapper">
+                    <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                    <div class="iframe-wrapper-text">
+                        Hello
+                    </div>
                 </div>
             </div>
         </div>
@@ -166,298 +279,627 @@
     <h2>Currently working on:</h2>
     <h1>AI/AGI</h1>
     <div class="thumbnails">
-        <div class="thumbnail" data-id="raycasting0">
-            <h3>Raytracing</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Raytracing</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/650851596.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/650851596/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="prey_predator">
-            <h3>Prey predator</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Prey predator</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/615492577.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/615492577/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="2D">
-            <h3>2D</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>2D</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/490374541.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/490374541/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="balls">
-            <h3>Balls</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Balls</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/DK1.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/1159073806/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="mixed_controls">
-            <h3>Mixed controls</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Mixed controls</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/DK2.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/1159074352/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="raycasting1">
-            <h3>2.5D raycasting</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>2.5D raycasting</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/Doom.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="LRD_editor">
-            <h3>LRD editors</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>LRD editors</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/LRD.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="AGI_snake">
-            <h3>AGI snake</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>AGI snake</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/Snake.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="serpent">
-            <h3>Serpent language</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Serpent language</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/Serpent.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="dataset">
-            <h3>Racing car dataset</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Racing car dataset</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/javi_dataset1.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="NN_port">
-            <h3>NN port</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>NN port</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/NN.png">
+            </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
             </div>
         </div>
     </div>
     <h1>Videogames</h1>
     <div class="thumbnails">
-        <div class="thumbnail" data-id="slide_puzzle">
-            <h3>5x5 slide puzzle</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>5x5 slide puzzle</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
-                <img src="images/scratch/380781433.png">
+                <img src="images/scratch/380781433.png" class="cl-image">
             </div>
         </div>
-        <div class="thumbnail" data-id="tower_climber">
-            <h3>Tower climber</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Tower climber</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/others/tower.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://snap.berkeley.edu/embed?project=TowerClimber&user=elcreeper22" width="400" height="300" allowfullscreen frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="chess">
-            <h3>Chess 4x4</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Chess 4x4</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/360824152.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://turbowarp.org/360824152/embed?autoplay" width="480" height="360" frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="spaceship">
-            <h3>Spaceship</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Spaceship</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/164933531.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://turbowarp.org/164933531/embed?autoplay" width="480" height="360" frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="bull_clicker">
-            <h3>Bull clicker</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Bull clicker</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/476612988.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://turbowarp.org/476612988/embed?autoplay" width="480" height="360" frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="konkr">
-            <h3>Konkr remake</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Konkr remake</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/konkr.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="minesweeper">
-            <h3>Minesweeper</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Minesweeper</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/minesweeper.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="go">
-            <h3>Go</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Go</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/others/go.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="mazes">
-            <h3>2D-5D mazes</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>2D-5D mazes</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/5Dmaze.png">
+            </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
             </div>
         </div>
     </div>
     <h2>### Add 3 extra contents</h2>
     <h1>Art</h1>
     <div class="thumbnails">
-        <div class="thumbnail" data-id="quantum">
-            <h3>Quantum art</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Quantum art</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/654836360.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/654836360/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="mandala">
-            <h3>Mandala</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Mandala</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/230834339.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/230834339/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="shader">
-            <h3>Shader</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Shader</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/Shader2.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="triangles">
-            <h3>Simple triangles</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Simple triangles</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/triángulos0.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="falling_letters">
-            <h3>Falling letters</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Falling letters</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/russian_matrix1.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="emergent_sierpinski">
-            <h3>Emergent sierpinski</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Emergent sierpinski</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/Sierpinski.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="bezier">
-            <h3>Bezier</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Bezier</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/bezier1.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="magenta">
-            <h3>Magenta</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Magenta</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/magenta.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="dos">
-            <h3>Two</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Two</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/dos.png">
+            </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
             </div>
         </div>
     </div>  
     <h2>### Mention ASCII art of java and clean basic ones and add them here</h2>
     <h1>Science introduction</h1>
     <div class="thumbnails">
-        <div class="thumbnail" data-id="electrons">
-            <h3>Electrons</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Electrons</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/860645572.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://turbowarp.org/860645572/embed?autoplay" width="480" height="360" frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="proteins">
-            <h3>Proteins</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Proteins</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/749801824.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://turbowarp.org/749801824/embed?autoplay" width="480" height="360" frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="scales">
-            <h3>Scales</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Scales</h3>
+                <p>🎮</p>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/472559768.png">
+            </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://turbowarp.org/472559768/embed?autoplay" width="480" height="360" frameborder="0"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
             </div>
         </div>
     </div>
     <h2>### Add several electromangetic images</h2>
     <h1>Experimental</h1>
     <div class="thumbnails">
-        <div class="thumbnail" data-id="electrons">
-            <h3>Oneline</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Oneline</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/oneline.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>Brainfuck interpreter</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Brainfuck interpreter</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/brainfuck.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>Code visualizer</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Code visualizer</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/.png">
             </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>LOLCODE</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>LOLCODE</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>Bloxorz solver</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Bloxorz solver</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>Equation solver</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Equation solver</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/scratch/.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>Scheduler1</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Scheduler1</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/scheduler.png">
             </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
+            </div>
         </div>
-        <div class="thumbnail" data-id="electrons">
-            <h3>Scheduler2</h3>
+        <div class="thumbnail">
+            <div class="header">
+                <h3>Scheduler2</h3>
+            </div>
             <div class="image-wrapper">
                 <img src="images/python/s.png">
+            </div>
+            <div class="iframe-wrapper">
+                <iframe loading="lazy" src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0" class="cl-iframe"></iframe>
+                <div class="iframe-wrapper-text">
+                    Hello
+                </div>
             </div>
         </div>
     </div>
 </body>
 <script>
-    const embedData = {
-        slide_puzzle: `<iframe src="https://turbowarp.org/380781433/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`,
-        tower_climber: `<iframe src="https://snap.berkeley.edu/embed?project=TowerClimber&user=elcreeper22" width="400" height="300" allowfullscreen frameborder="0"></iframe>`,
-        chess: `<iframe src="https://turbowarp.org/360824152/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`,
-        spaceship: `<iframe src="https://turbowarp.org/164933531/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`,
-        bull_clicker: `<iframe src="https://turbowarp.org/476612988/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`,
-        electrons: `<iframe src="https://turbowarp.org/860645572/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`,
-        proteins: `<iframe src="https://turbowarp.org/749801824/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`,
-        scales: `<iframe src="https://turbowarp.org/472559768/embed?autoplay" width="480" height="360" frameborder="0"></iframe>`
-    };
+    document.querySelectorAll('.iframe-wrapper-text').forEach(text => {
+        text.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    });
 
     document.querySelectorAll('.thumbnail').forEach(thumbnail => {
-    let expanded = false;
-
-    thumbnail.addEventListener('click', () => {
-        if (!expanded) {
-            thumbnail.classList.add('expanded');
-
-            const id = thumbnail.getAttribute('data-id');
-            const contentHTML = embedData[id] || "<p>No content available.</p>";
-
-            const content = document.createElement('div');
-            content.classList.add('expanded-content');
-            content.innerHTML = contentHTML;
-
-            thumbnail.appendChild(content);
-            expanded = true;
-        } else {
-            thumbnail.classList.remove('expanded');
-            thumbnail.querySelector('.expanded-content')?.remove();
-            expanded = false;
-        }
+        thumbnail.addEventListener('click', () => {
+            if (thumbnail.classList.contains('expanded')) {
+                // Store iframe sources before removing them
+                const iframe = thumbnail.querySelectorAll('iframe')[0];
+                console.log('exp', iframe.src);
+                thumbnail.old_src = iframe.src;
+                iframe.src = 'about:blank';
+            } else {
+                // Restore iframe sources
+                const iframe = thumbnail.querySelectorAll('iframe')[0];
+                console.log('unexp', iframe.src);
+                if (thumbnail.old_src) {
+                    iframe.src = thumbnail.old_src;
+                }
+            }
+            thumbnail.classList.toggle('expanded');
+            
+        });
     });
-});
+
 </script>
 </html>
 
+<!-- 
+Add fullscreen to scratch proyects
+continue working on the page:
+- Rework visuals
+- Change BG
+- Add images where needed
+- Gather mp4 for pygame proyects
+- Think of a way to do the main projects more cool looking
+- Upgrade tiling resizing based on resolution
+-->
