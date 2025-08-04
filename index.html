@@ -872,19 +872,17 @@
 
     document.querySelectorAll('.thumbnail').forEach(thumbnail => {
         thumbnail.addEventListener('click', () => {
+            const media = thumbnail.querySelector('iframe, img');
             if (thumbnail.classList.contains('expanded')) {
-                // Store iframe sources before removing them
-                const iframe = thumbnail.querySelectorAll('iframe')[0];
-                console.log('exp', iframe.src);
-                thumbnail.old_src = iframe.src;
-                iframe.src = 'about:blank';
+                thumbnail.old_src = media.src;
+                media.src 'about:blank';
+                console.log('collapsed:',thumbnail.old_src);
             } else {
                 // Restore iframe sources
-                const iframe = thumbnail.querySelectorAll('iframe')[0];
-                console.log('unexp', iframe.src);
-                if (thumbnail.old_src) {
-                    iframe.src = thumbnail.old_src;
-                }
+              if (thumbnail_old_src) {
+                media.src = thumbnail.old_src;
+                console.log('expanded:',media.src);
+              }
             }
             thumbnail.classList.toggle('expanded');
             
