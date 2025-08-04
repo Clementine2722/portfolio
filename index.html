@@ -871,22 +871,22 @@
     });
 
     document.querySelectorAll('.thumbnail').forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-            const media = thumbnail.querySelector('iframe, img');
-            if (thumbnail.classList.contains('expanded')) {
-                thumbnail.old_src = media.src;
-                media.src 'about:blank';
-                console.log('collapsed:',thumbnail.old_src);
-            } else {
-                // Restore iframe sources
-              if (thumbnail_old_src) {
-                media.src = thumbnail.old_src;
-                console.log('expanded:',media.src);
-              }
-            }
-            thumbnail.classList.toggle('expanded');
+      const iframe = thumbnail.querySelector('iframe');
+      if (iframe) {iframe.dataset.originalSrc = iframe.src}
+
+      thumbnail.addEventListener('click', () => {
+        const media = thumbnail.querySelector('iframe, img');
+
+        if (thumbnail.classList.contains('expanded')) {
+          if (media.tagName === 'IFRAME') {media.src = 'about:blank';}
+        } else {
+          if (media.tagName === 'IFRAME' && media.dataset.originalSrc) {
+            media.src = media.dataset.originalSrc;
+          }
+        }
+        thumbnail.classList.toggle('expanded');
             
-        });
+      });
     });
 
 </script>
